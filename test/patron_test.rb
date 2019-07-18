@@ -15,12 +15,13 @@ class PatronTest < Minitest::Test
     assert_equal 'Bob', @bob.name
     assert_equal 20, @bob.spending_money
     assert_equal [], @bob.interests
+    assert_empty @bob.interests
   end
 
   def test_add_interests
     @bob.add_interest("Dead Sea Scrolls")
     @bob.add_interest("Gems and Minerals")
-    
+
     assert_equal ["Dead Sea Scrolls", "Gems and Minerals"], @bob.interests
   end
 end
